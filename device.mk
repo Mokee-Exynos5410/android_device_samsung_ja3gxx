@@ -47,6 +47,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libdmitry
 
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+
 # Radio (audio-dependency)
 PRODUCT_PACKAGES += \
     libsecril-client \

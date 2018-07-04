@@ -29,7 +29,7 @@ TARGET_OTA_ASSERT_DEVICE := ja3g,ja3gxx,i9500,GT-I9500
 TARGET_SOC := exynos5410
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_ja3gxx_defconfig
+TARGET_KERNEL_CONFIG := mokee_ja3gxx_defconfig
 
 # Audio
 TARGET_AUDIOHAL_VARIANT := samsung
@@ -44,13 +44,12 @@ LINKER_FORCED_SHIM_LIBS := /system/bin/gpsd|libdmitry.so
 BOARD_MODEM_TYPE := xmm6360
 BOARD_PROVIDES_LIBRIL := true
 BOARD_RIL_CLASS := ../../../device/samsung/ja3gxx/ril
-TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5410
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
+#BOARD_SEPOLICY_DIRS += \
     device/samsung/ja3gxx/sepolicy
 
 # inherit from the proprietary version

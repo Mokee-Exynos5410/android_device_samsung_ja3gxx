@@ -25,6 +25,7 @@ $(call inherit-product, device/samsung/exynos5410-common/exynos5410.mk)
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_ja3gxx
 PRODUCT_DEVICE := ja3gxx
+PRODUCT_MODEL := ja3gxx
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := GT-I9500
+
