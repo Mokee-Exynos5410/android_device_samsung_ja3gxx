@@ -29,7 +29,7 @@ TARGET_OTA_ASSERT_DEVICE := ja3g,ja3gxx,i9500,GT-I9500
 TARGET_SOC := exynos5410
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_ja3gxx_defconfig
+TARGET_KERNEL_CONFIG := mokee_ja3gxx_defconfig
 
 # Audio
 TARGET_AUDIOHAL_VARIANT := samsung
