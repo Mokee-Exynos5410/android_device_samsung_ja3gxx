@@ -56,7 +56,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full \
-    modemloader
+    modemloader \
+    libshim_cutils_atomic \
+    libsecnativefeature
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
