@@ -43,7 +43,7 @@ LINKER_FORCED_SHIM_LIBS := /system/bin/gpsd|libdmitry.so
 # Radio
 BOARD_MODEM_TYPE := xmm6360
 BOARD_PROVIDES_LIBRIL := true
-TARGET_RIL_VARIANT := caf
+BOARD_RIL_CLASS := ../../../device/samsung/ja3gxx/ril
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5410

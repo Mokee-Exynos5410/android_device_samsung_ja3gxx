@@ -20,7 +20,3 @@ ro.ril.needs_videocall_field=false
 # OTA
 ro.ota.manifest=https://raw.githubusercontent.com/Dracanrage/Exynos5410_Mokee_OTA/mkn-mr1/ja3gxx.xml
 
-# Oreo
-# disable consumer ir while it's broken
-PRODUCT_PROPERTY_OVERRIDES += \
-	config.disable_consumerir=true
