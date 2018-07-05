@@ -37,17 +37,17 @@ on post-fs-data
 on boot
    chown media sdcard_rw /sys/class/power_supply/battery/store_mode
 
-service modemloader /system/bin/modemloader
+service modemloader /vendor/bin/modemloader
     class core
     oneshot
 
-service cpboot-daemon /system/bin/cbd -d -txmm626x -bh -mh -p 13
+service cpboot-daemon /vendor/bin/cbd -d -txmm626x -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
     disabled
 
-service ril-daemon /system/bin/rild
+service ril-daemon /vendor/bin/rild
     class main
     socket rild stream 660 root radio
     socket sap_uim_socket1 stream 660 bluetooth bluetooth
@@ -66,7 +66,7 @@ on property:persist.sys.cpboot=disable
     stop cpboot-daemon
 
 # GPS
-service gpsd /system/bin/gpsd -c /system/etc/gps.xml
+service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main
     user gps
     group system inet net_raw wakelock
