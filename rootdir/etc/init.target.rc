@@ -65,6 +65,10 @@ on property:persist.sys.cpboot=disable
     stop ril-daemon
     stop cpboot-daemon
 
+# h2k permission
+    chown radio system /efs/redata.bin
+    mkdir /data/misc/radio/hatp 0775 radio system
+
 # GPS
 service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main

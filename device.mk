@@ -45,7 +45,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
 
 PRODUCT_PACKAGES += \
-    libdmitry
+    libdmitry \
+    android.hardware.gnss@1.0-impl
 
 # Radio (audio-dependency)
 PRODUCT_PACKAGES += \
