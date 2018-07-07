@@ -44,21 +44,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
 
+# Radio
 PRODUCT_PACKAGES += \
-    libdmitry
-
-# Radio (audio-dependency)
-PRODUCT_PACKAGES += \
+		android.hardware.radio@1.0 \
+		android.hardware.radio.deprecated@1.0 \
     libsecril-client \
-    libsecril-client-sap
-
-# Radio (RIL)
-PRODUCT_PACKAGES += \
-    libxml2 \
-    libprotobuf-cpp-full \
+    libsecril-client-sap \
+    rild \
+    libreference-ril \
+    libril \
     modemloader \
-    libshim_cutils_atomic \
-    libsecnativefeature
+    libxml2 \
+    libprotobuf-cpp-full
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
