@@ -10,10 +10,12 @@ persist.incall.workaround=true
 # Radio
 rild.libargs=-d /dev/ttyS0
 rild.libpath=/system/lib/libsec-ril.so
-ro.telephony.ril_class=SamsungExynosRIL
 ro.ril.telephony.mqanelements=6
 ro.telephony.default_network=0
 telephony.lteOnCdmaDevice=0
+ro.telephony.get_imsi_from_sim=true
+ro.ril.force_eri_from_xml=true
+net.tethering.noprovisioning=true
 ro.ril.samsung_nextgen_modem=false
 ro.ril.needs_videocall_field=false
 

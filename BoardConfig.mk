@@ -16,8 +16,9 @@
 #
 
 LOCAL_PATH := device/samsung/ja3gxx
-
+ANDROID_COMPILE_WITH_JACK:=false
 BOARD_VENDOR := samsung
+COMMON_PATH := device/samsung/exynos5410-common
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -43,7 +44,6 @@ LINKER_FORCED_SHIM_LIBS := /system/bin/gpsd|libdmitry.so
 # Radio
 BOARD_MODEM_TYPE := xmm6360
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/samsung/ja3gxx/ril
 BOARD_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # Recovery
