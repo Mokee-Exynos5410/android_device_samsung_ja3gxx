@@ -26,7 +26,7 @@ on post-fs-data
     rm /data/data/com.android.providers.telephony/databases
     rm /data/data/com.android.providers.telephony/shared_prefs
 
-    # Symlink directories to access telephony.db and preferred-apn.xml required by libsec-ril
+    # Symlink directories to access telephony.db and preferred-apn.xml required by cbd
     symlink /data/user_de/0/com.android.providers.telephony/databases /data/data/com.android.providers.telephony/databases
     symlink /data/user_de/0/com.android.providers.telephony/shared_prefs /data/data/com.android.providers.telephony/shared_prefs
 
@@ -37,11 +37,11 @@ on post-fs-data
 on boot
    chown media sdcard_rw /sys/class/power_supply/battery/store_mode
 
-service modemloader /vendor/bin/modemloader
+service modemloader /system/bin/modemloader
     class core
     oneshot
 
-service cpboot-daemon /vendor/bin/cbd -d -txmm626x -bh -mh -p 13
+service cpboot-daemon /system/bin/cbd -d -txmm626x -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
@@ -53,7 +53,7 @@ service ril-daemon /vendor/bin/hw/rild -c 1 -l /system/lib/libsec-ril.so
     socket sap_uim_socket1 stream 660 bluetooth bluetooth
     socket rild-debug stream 660 system radio
     user radio
-    group radio cache inet misc audio sdcard_r sdcard_rw vpn system log readproc wakelock
+    group radio cache inet misc audio sdcard_r sdcard_rw log vpn system readproc wakelock
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 onrestart restart cpboot-daemon
 
@@ -65,12 +65,8 @@ on property:persist.sys.cpboot=disable
     stop ril-daemon
     stop cpboot-daemon
 
-# h2k permission
-    chown radio system /efs/redata.bin
-    mkdir /data/misc/radio/hatp 0775 radio system
-
 # GPS
-service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
+service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     class main
     user gps
     group system inet net_raw wakelock

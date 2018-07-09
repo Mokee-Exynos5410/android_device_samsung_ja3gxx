@@ -16,8 +16,9 @@
 #
 
 LOCAL_PATH := device/samsung/ja3gxx
-ANDROID_COMPILE_WITH_JACK:=false
+
 BOARD_VENDOR := samsung
+
 COMMON_PATH := device/samsung/exynos5410-common
 
 # Include path
