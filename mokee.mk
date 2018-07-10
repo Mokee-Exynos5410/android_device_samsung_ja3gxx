@@ -3,6 +3,11 @@ $(call inherit-product, device/samsung/ja3gxx/full_ja3gxx.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
+# SU
+WITH_SU := true
+
+# TWRP
+WITH_TWRP=true
 
 PRODUCT_NAME := mk_ja3gxx
 PRODUCT_DEVICE := ja3gxx
