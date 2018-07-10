@@ -39,8 +39,11 @@ TARGET_AUDIOHAL_VARIANT := samsung
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
+# HIDL Manifest
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+
 # Linker
-LINKER_FORCED_SHIM_LIBS := /system/bin/gpsd|libdmitry.so
+TARGET_LD_SHIM_LIBS := /system/bin/gpsd|libdmitry.so
 
 # Radio
 BOARD_MODEM_TYPE := xmm6360

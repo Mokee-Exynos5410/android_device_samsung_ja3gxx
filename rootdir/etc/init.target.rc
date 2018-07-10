@@ -1,6 +1,9 @@
 import init.universal5410.usb.rc
 import init.universal5410.wifi.rc
 
+on init
+export LD_SHIM_LIBS "/system/bin/gpsd|libdmitry.so:/system/lib/libsec-ril.so|libsec-ril_shim.so"
+
 on post-fs-data
 # PMK permission
     mkdir /efs/mc 0770 radio system
