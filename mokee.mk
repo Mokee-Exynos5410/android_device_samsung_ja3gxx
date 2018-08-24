@@ -9,6 +9,12 @@ $(call inherit-product, vendor/mk/config/telephony.mk)
 PRODUCT_NAME := mk_ja3gxx
 PRODUCT_DEVICE := ja3gxx
 
+# SU
+WITH_SU := true
+
+# TWRP
+WITH_TWRP=true
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_MODEL=GT-I9500 \
     PRODUCT_NAME=ja3gxx \
